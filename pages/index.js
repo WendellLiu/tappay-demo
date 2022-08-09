@@ -54,7 +54,7 @@ export default function Home() {
         return;
       }
       alert("get prime 成功，prime: " + result.card.prime);
-      postSubscriptions("creditCard", result.card.prime);
+      postSubscriptions("creditCard", { prime: result.card.prime });
     });
   }, []);
 
