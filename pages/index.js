@@ -3,6 +3,7 @@ import Head from "next/head";
 import { Box, Button, Text } from "@chakra-ui/react";
 
 import useDirectCard from "lib/hooks/use-direct-card";
+import { postSubscriptions } from "lib/fetch/subscriptions";
 
 const getBorderColor = state => {
   switch (state) {
@@ -53,6 +54,7 @@ export default function Home() {
         return;
       }
       alert("get prime 成功，prime: " + result.card.prime);
+      postSubscriptions("creditCard", result.card.prime);
     });
   }, []);
 
