@@ -1,6 +1,8 @@
-import { useCallback, useEffect } from "react";
+import { useCallback } from "react";
 import Head from "next/head";
 import { Box, Button, Text } from "@chakra-ui/react";
+
+import useDirectCard from "lib/hooks/use-direct-card";
 
 const FieldContainer = props => (
   <Box
@@ -15,6 +17,8 @@ const FieldContainer = props => (
 );
 
 export default function Home() {
+  useDirectCard();
+
   const onSubmit = useCallback(e => {
     e.preventDefault();
 
